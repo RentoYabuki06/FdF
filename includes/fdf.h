@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 14:44:09 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/09/19 15:23:03 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/09/19 15:34:55 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@
 # include <stdint.h>
 # include <float.h>
 # include <stdbool.h>
+
+# define WIDTH 1280
+# define HEIGHT 920
+# define RATE 1.3913043478
+# define COS_30 0.86602540378
+# define SIN_30 0.52532198881
 
 typedef struct s_rgb
 {
@@ -89,13 +95,8 @@ typedef struct s_fdf
 	t_map		*map;
 }				t_fdf;
 
-
-# define WIDTH 1280
-# define HEIGHT 920
-# define RATE 1.3913043478
-# define COS_30 0.86602540378
-# define SIN_30 0.52532198881
-
 void	ft_initcheck_file(char *filename);
+t_fdf	*ft_init_fdf(const char **argv);
+t_map	*ft_init_map(void);
 
 #endif

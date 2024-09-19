@@ -6,11 +6,13 @@
 #    By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/19 14:33:10 by yabukirento       #+#    #+#              #
-#    Updated: 2024/09/19 14:59:02 by yabukirento      ###   ########.fr        #
+#    Updated: 2024/09/19 15:30:50 by yabukirento      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	./srcs/XXX.c
+SRCS =	./srcs/main.c	\
+		./srcs/init.c	\
+		./srcs/init_check.c	\
 
 OBJS = $(SRCS:.c=.o)
 
