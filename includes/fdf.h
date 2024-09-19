@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 14:44:09 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/09/19 16:47:53 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/09/19 17:17:43 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define FDF_H
 
 # include "../libft/libft.h"
-# include "../minilibx_macos/mlx.h"
+# include "../minilibx/mlx.h"
+# include "../ft_printf/ft_printf.h"
 # include "../get_next_line/get_next_line.h"
 # include <fcntl.h>
 # include <errno.h>
@@ -96,17 +97,17 @@ typedef struct s_fdf
 }				t_fdf;
 
 void		ft_initcheck_file(char *filename);
-t_fdf		*ft_init_fdf(const char **argv);
+t_fdf		*ft_init_fdf(char **argv);
 t_map		*ft_init_map(void);
-void		ft_read_map(char **filename, t_map *map);
+void		ft_read_map(char *filename, t_map *map);
 int			ft_count_col(const char *line, char c);
 uint32_t	ft_hextoi(char *str);
 void		ft_conv_iso(t_map *map);
 void		ft_draw_line(t_fdf *fdf);
 void		ft_error_exit(char *str);
 uint32_t	ft_abs(int num);
-void		put_on_pixel(t_fdf *env, int x, int y, uint32_t color);
-int			close_win(void *prm);
-int			close_esc(int keycode, t_fdf *env);
+void		ft_put_on_pixel(t_fdf *fdf, int x, int y, uint32_t color);
+int			ft_close_win(void *prm);
+int			ft_close_esc(int keycode, t_fdf *fdf);
 
 #endif

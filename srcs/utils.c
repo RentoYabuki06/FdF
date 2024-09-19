@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 16:44:14 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/09/19 16:46:14 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/09/19 16:51:24 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,35 +26,35 @@ uint32_t	ft_abs(int num)
 	return (num);
 }
 
-void	put_on_pixel(t_fdf *env, int x, int y, uint32_t color)
+void	ft_put_on_pixel(t_fdf *fdf, int x, int y, uint32_t color)
 {
 	char	*dst;
 
-	dst = env->addr + (y * env->size_line + x * (env->bpp / 8));
+	dst = fdf->addr + (y * fdf->size_line + x * (fdf->bpp / 8));
 	*(uint32_t *)dst = color;
 }
 
-int	close_win(void *prm)
+int	ft_close_win(void *prm)
 {
-	t_fdf	*env;
+	t_fdf	*fdf;
 
-	env = prm;
-	mlx_destroy_image(env->mlx, env->img);
-	mlx_destroy_window(env->mlx, env->win);
-	free(env->map->point3d);
-	free(env->map);
-	free(env);
+	fdf = prm;
+	mlx_destroy_image(fdf->mlx, fdf->img);
+	mlx_destroy_window(fdf->mlx, fdf->win);
+	free(fdf->map->point3d);
+	free(fdf->map);
+	free(fdf);
 	exit (0);
 }
 
-int	close_esc(int keycode, t_fdf *env)
+int	ft_close_esc(int keycode, t_fdf *fdf)
 {
 	if (!(keycode == 53))
 		return (0);
-	mlx_destroy_image(env->mlx, env->img);
-	mlx_destroy_window(env->mlx, env->win);
-	free(env->map->point3d);
-	free(env->map);
-	free(env);
+	mlx_destroy_image(fdf->mlx, fdf->img);
+	mlx_destroy_window(fdf->mlx, fdf->win);
+	free(fdf->map->point3d);
+	free(fdf->map);
+	free(fdf);
 	exit (0);
 }

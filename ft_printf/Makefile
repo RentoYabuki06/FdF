@@ -6,11 +6,11 @@
 #    By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 14:59:44 by yabukirento       #+#    #+#              #
-#    Updated: 2024/05/03 15:36:46 by yabukirento      ###   ########.fr        #
+#    Updated: 2024/09/19 17:07:50 by yabukirento      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	ft_itoa.c \
+SRCS =	ft_printf_itoa.c \
 		ft_printchar.c \
 		ft_printstr.c \
 		ft_format.c \

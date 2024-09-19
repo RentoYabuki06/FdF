@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 16:26:03 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/09/19 16:28:27 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/09/19 17:05:57 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ uint32_t	ft_hextoi(char *str)
 	str++;
 	while (ft_isdigit(*str) || ft_ishex(*str))
 	{
-		pow = (len_to_space(str) - 1);
+		pow = (ft_len_to_space(str) - 1);
 		base = 1;
 		while (pow-- > 0)
 			base = base * 16;

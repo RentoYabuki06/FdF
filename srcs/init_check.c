@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:02:49 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/09/19 16:09:52 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/09/19 17:00:51 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,17 @@ static int	ft_chk_color_num(char *line)
 	i = 0;
 	line++;
 	if (line[0] != '0' || (line[1] != 'x' && line[1] != 'X'))
-		ft_error_and_exit("ERROR: Invalid color value.\n");
+		ft_error_exit("ERROR: Invalid color value.\n");
 	line = line + 2;
 	while (line[i] != ' ' && line[i] != '\n' && line[i] != '\0')
 	{
 		if (ft_isdigit(line[i]) == 0 && !('a' <= line[i] && line[i] <= 'f') && \
 		!('A' <= line[i] && line[i] <= 'F'))
-			ft_error_and_exit("ERROR: Wrong color value.(expect 0~9 or a~f)\n");
+			ft_error_exit("ERROR: Wrong color value.(expect 0~9 or a~f)\n");
 		i++;
 	}
 	if (6 < i)
-		ft_error_and_exit("ERROR: Too many color value.\n");
+		ft_error_exit("ERROR: Too many color value.\n");
 	return (i + 3);
 }
 
@@ -69,7 +69,7 @@ static void ft_initcheck_line(char *line)
 		while (line[i] != ' ' && line[i] != ',')
 		{
 			if (ft_isdigit(line[i]) == 0 && line[i] != '\n' && line[i] != '\0')
-				ft_error_and_exit("ERROR: Value is invalid.(error at chk_num)\n");
+				ft_error_exit("ERROR: Value is invalid.(error at chk_num)\n");
 			i++;
 			if (line[i] == '\n' || line[i] == '\0')
 				break ;
@@ -77,7 +77,7 @@ static void ft_initcheck_line(char *line)
 		if (line[i] == ',')
 		{
 			if (line[i - 1] == ' ' || line[i + 1] == ' ')
-				ft_error_and_exit("ERROR: Value is invalid.(error at chk_num)\n");
+				ft_error_exit("ERROR: Value is invalid.(error at chk_num)\n");
 			i = i + ft_chk_color_num(&line[i]);
 		}
 	}

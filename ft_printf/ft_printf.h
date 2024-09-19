@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:59:11 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/05/04 17:33:45 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/09/19 16:54:35 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-char	*ft_itoa(int n);
+char	*ft_printf_itoa(int n);
 char	*ft_uitoa(unsigned int n);
 int		ft_printchar(int a);
 int		ft_printstr(const char *str);

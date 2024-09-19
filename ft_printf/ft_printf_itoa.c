@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_printf_itoa.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:58:34 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/05/04 17:14:35 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/09/19 17:12:32 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static size_t	ft_numlen(long long n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char	*ft_printf_itoa(int n)
 {
 	char		*ans;
 	size_t		len;
