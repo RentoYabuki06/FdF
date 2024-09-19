@@ -6,17 +6,11 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 14:43:58 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/09/19 15:33:18 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/09/19 16:46:08 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
-
-void ft_error_exit(char *str)
-{
-	ft_printf("%s\n", str);
-	exit(1);
-}
 
 int main(int argc, char **argv)
 {
@@ -28,10 +22,11 @@ int main(int argc, char **argv)
 	fdf = ft_init_fdf(argv[1]);
 	fdf->map = ft_init_map();
 	ft_read_map(argv[1], fdf->map);
-	ft_init_mlx(fdf);
-	ft_draw_map(fdf);
-	mlx_hook(fdf->win, 2, 0, ft_key_press, fdf);
-	mlx_hook(fdf->win, 17, 0, ft_close, fdf);
+	ft_conv_iso(fdf->map);
+	ft_draw_line(fdf);
+	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->img, 0, 0);
+	mlx_key_hook(fdf->win, close_esc, fdf);
+	mlx_hook(fdf->win, 17, 0, close_win, fdf);
 	mlx_loop(fdf->mlx);
 	return (0);
 }

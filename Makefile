@@ -6,13 +6,17 @@
 #    By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/19 14:33:10 by yabukirento       #+#    #+#              #
-#    Updated: 2024/09/19 15:30:50 by yabukirento      ###   ########.fr        #
+#    Updated: 2024/09/19 16:42:49 by yabukirento      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	./srcs/main.c	\
-		./srcs/init.c	\
-		./srcs/init_check.c	\
+SRCS =	./srcs/main.c			\
+		./srcs/init.c			\
+		./srcs/init_check.c		\
+		./srcs/ft_read_map.c	\
+		./srcs/ft_hextoi.c		\
+		./srcs/ft_conv_iso.c		\
+		./srcs/ft_draw_line.c		\
 
 OBJS = $(SRCS:.c=.o)
 

@@ -6,13 +6,13 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:02:49 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/09/19 15:14:49 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/09/19 16:09:52 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-static int ft_count_col(const char *line, char c)
+int ft_count_col(const char *line, char c)
 {
 	int		i;
 	int		col_num;
