@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ryabuki <ryabuki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:29:41 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/09/19 16:57:29 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/09/21 11:02:28 by ryabuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_fdf	*ft_init_fdf(char **argv)
 	char	*title;
 
 	title = ft_strjoin("FDF - ", argv[1]);
+	if (!title)
+		ft_error_exit("ERROR: Failed to allocate memory for title.\n");
 	fdf = malloc(sizeof(t_fdf));
 	if (!fdf)
 		ft_error_exit("ERROR: Failed to allocate memory for fdf.\n");
