@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+         #
+#    By: ryabuki <ryabuki@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/19 14:47:11 by yabukirento       #+#    #+#              #
-#    Updated: 2024/09/19 14:51:50 by yabukirento      ###   ########.fr        #
+#    Updated: 2024/09/21 10:35:16 by ryabuki          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ SRCS	=	get_next_line.c \
 
 OBJS	=	$(SRCS:.c=.o)
 
-NAME	=	get_next_line
-CC		=	gcc
+NAME	=	get_next_line.a
+CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror
 
 all: 		$(NAME)
@@ -35,3 +35,5 @@ fclean:		clean
 			rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

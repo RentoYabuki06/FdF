@@ -56,7 +56,7 @@ $(NAME): $(OBJS)
 	ranlib $@
 
 %.o: %.c
-	gcc -Wall -Wextra -Werror -c $< -o $@
+	cc -Wall -Wextra -Werror -c $< -o $@
 
 bonus: $(OBJSBONUS)
 	ar rc $(NAME) $^

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+         #
+#    By: ryabuki <ryabuki@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 14:59:44 by yabukirento       #+#    #+#              #
-#    Updated: 2024/09/19 17:07:50 by yabukirento      ###   ########.fr        #
+#    Updated: 2024/09/21 10:31:00 by ryabuki          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRCS =	ft_printf_itoa.c \
 OBJS = $(SRCS:.c=.o)
 
 NAME = libftprintf.a
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
