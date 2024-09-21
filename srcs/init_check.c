@@ -6,31 +6,33 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:02:49 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/09/19 17:00:51 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/09/21 12:06:47 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-int ft_count_col(const char *line, char c)
+int	ft_count_col(const char *line, char c)
 {
-	int		i;
-	int		col_num;
+	int	i;
+	int	new;
 
 	i = 0;
-	col_num = 0;
-	while (line[i])
+	new = 0;
+	if (line == NULL)
+		return (0);
+	while (*line != '\n' && *line != '\0')
 	{
-		if (line[i] != c)
+		if (*line != c && new == 0)
 		{
-			col_num++;
-			while (line[i] && line[i] != c)
-				i++;
-		}
-		else
+			new = 1;
 			i++;
+		}
+		else if (*line == c)
+			new = 0;
+		line++;
 	}
-	return (col_num);
+	return (i);
 }
 
 static int	ft_chk_color_num(char *line)
