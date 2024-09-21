@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ryabuki <ryabuki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 16:44:14 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/09/19 16:51:24 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/09/21 12:24:25 by ryabuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ft_error_exit(char *str)
 	ft_printf("%s\n", str);
 	exit(1);
 }
-
 
 uint32_t	ft_abs(int num)
 {

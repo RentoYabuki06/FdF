@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_check.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ryabuki <ryabuki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:02:49 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/09/21 12:06:47 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/09/21 12:27:03 by ryabuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,7 @@ static int	ft_chk_color_num(char *line)
 	return (i + 3);
 }
 
-
-static void ft_initcheck_line(char *line)
+static void	ft_initcheck_line(char *line)
 {
 	int	i;
 
@@ -84,7 +83,6 @@ static void ft_initcheck_line(char *line)
 		}
 	}
 }
-
 
 void	ft_initcheck_file(char *filename)
 {

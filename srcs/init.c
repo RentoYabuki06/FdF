@@ -6,7 +6,7 @@
 /*   By: ryabuki <ryabuki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:29:41 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/09/21 11:02:28 by ryabuki          ###   ########.fr       */
+/*   Updated: 2024/09/21 12:26:45 by ryabuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ t_fdf	*ft_init_fdf(char **argv)
 	fdf->img = mlx_new_image(fdf->mlx, WIDTH, HEIGHT);
 	if (!fdf->img)
 		ft_error_exit("ERROR: Failed to create image.\n");
-	fdf->addr = mlx_get_data_addr(fdf->img, &(fdf->bpp), &(fdf->size_line), &(fdf->endian));
+	fdf->addr = mlx_get_data_addr(fdf->img, \
+		&(fdf->bpp), &(fdf->size_line), &(fdf->endian));
 	fdf->map = NULL;
 	return (fdf);
 }

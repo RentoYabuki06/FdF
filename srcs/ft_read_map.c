@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_read_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ryabuki <ryabuki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 16:01:44 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/09/19 17:05:31 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/09/21 12:25:51 by ryabuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,17 +65,17 @@ static int	ft_get_width(char *filename)
 static void	ft_store_value(char *line, t_map *map, int y)
 {
 	static int	s_idx;
-	size_t			x;
+	size_t		x;
 
 	x = 0;
-	while(x < map->width)
+	while (x < map->width)
 	{
 		while (*line == ' ')
 			line++;
 		map->point3d[s_idx].x = (double)x;
 		map->point3d[s_idx].y = (double)y;
 		map->point3d[s_idx].z = (double)ft_atoi(line);
-		while (*line != ' ' && *line != ',' && *line != '\0' && *line != '\n') 
+		while (*line != ' ' && *line != ',' && *line != '\0' && *line != '\n')
 			line++;
 		if (*line == ',')
 			map->point3d[s_idx].color = ft_hextoi(line);
