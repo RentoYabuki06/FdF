@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryabuki <ryabuki@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:29:41 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/09/21 12:26:45 by ryabuki          ###   ########.fr       */
+/*   Updated: 2024/09/21 16:57:13 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ t_fdf	*ft_init_fdf(char **argv)
 		ft_error_exit("ERROR: Failed to create image.\n");
 	fdf->addr = mlx_get_data_addr(fdf->img, \
 		&(fdf->bpp), &(fdf->size_line), &(fdf->endian));
+	if (!fdf->addr)
+		ft_error_exit("ERROR: Failed to get data address.\n");
 	fdf->map = NULL;
 	return (fdf);
 }

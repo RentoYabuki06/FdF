@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryabuki <ryabuki@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 16:44:14 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/09/21 12:24:25 by ryabuki          ###   ########.fr       */
+/*   Updated: 2024/09/21 17:02:53 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_error_exit(char *str)
 {
 	ft_printf("%s\n", str);
-	exit(1);
+	exit(EXIT_FAILURE);
 }
 
 uint32_t	ft_abs(int num)
@@ -43,7 +43,7 @@ int	ft_close_win(void *prm)
 	free(fdf->map->point3d);
 	free(fdf->map);
 	free(fdf);
-	exit (0);
+	exit (EXIT_FAILURE);
 }
 
 int	ft_close_esc(int keycode, t_fdf *fdf)
@@ -55,5 +55,5 @@ int	ft_close_esc(int keycode, t_fdf *fdf)
 	free(fdf->map->point3d);
 	free(fdf->map);
 	free(fdf);
-	exit (0);
+	exit (EXIT_FAILURE);
 }

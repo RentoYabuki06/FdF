@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 16:30:50 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/09/19 16:47:20 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/09/21 17:07:06 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	ft_get_iso_max(t_map *map)
 			map->min_ix = point[i].iso_x;
 		if (point[i].iso_y < map->min_iy)
 			map->min_iy = point[i].iso_y;
-			i++;
+		i++;
 	}
 	map->d_ix = map->max_ix + fabs(map->min_ix);
 	map->d_iy = map->max_iy + fabs(map->min_iy);
@@ -56,16 +56,12 @@ void	ft_conv_iso(t_map *map)
 	size_t	i;
 	t_point	*point;
 	double	scale;
-	double	px_max;
-	double	py_max;
 
 	i = 0;
 	point = map->point3d;
 	ft_trans_to_iso(map);
 	ft_get_iso_max(map);
-	px_max = ((map->d_ix) * (WIDTH / (map->d_ix)));
-	py_max = (((map->d_iy) * (HEIGHT / (map->d_iy))) * RATE);
-	if (py_max <= HEIGHT && px_max - 1 <= WIDTH)
+	if (RATE <= 1)
 		scale = (map->d_ix);
 	else
 		scale = (map->d_iy) * 1.75;

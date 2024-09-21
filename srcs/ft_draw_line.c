@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_draw_line.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryabuki <ryabuki@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 16:41:21 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/09/21 12:25:01 by ryabuki          ###   ########.fr       */
+/*   Updated: 2024/09/21 16:50:38 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ static void	ft_set_color_dif(t_point *point, t_line *prm, size_t i, size_t next)
 	prm->dblue = (double)prm->lblue / (double)prm->lenght;
 }
 
-// 描画開始点、線の長さ、変化率、色の差を取得
 static void	ft_set_params(t_fdf *fdf, t_point *point, size_t i, size_t next)
 {
 	t_line	prm;
