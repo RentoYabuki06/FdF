@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/19 19:33:03 by yabukirento      ###   ########.fr       */
+/*   Created: 2025/03/08 13:25:48 by yabukirento       #+#    #+#             */
+/*   Updated: 2025/03/08 13:27:42 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_strdup(const char *src)
+long	ft_atol(const char *s)
 {
-	int		i;
-	int		len;
-	char	*dest;
+	long	num;
+	int		sign;
 
-	len = 0;
-	while (src[len])
-		len++;
-	dest = (char *)malloc((len + 1) * sizeof(char));
-	if (dest == NULL)
-		return (NULL);
-	i = 0;
-	while (i < len)
+	num = 0;
+	sign = 1;
+	while ((*s >= 9 && *s <= 13) || *s == ' ')
+		s++;
+	if (*s == '-' || *s == '+')
 	{
-		dest[i] = src[i];
-		i++;
+		if (*s == '-')
+			sign = -1;
+		s++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	while (ft_isdigit(*s))
+		num = num * 10 + (*s++ - '0');
+	return (num * sign);
 }

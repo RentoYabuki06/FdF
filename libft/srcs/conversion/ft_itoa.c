@@ -6,41 +6,31 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/07/14 15:32:52 by yabukirento      ###   ########.fr       */
+/*   Updated: 2025/04/18 13:43:24 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdlib.h>
 
-static size_t	ft_numlen(long long n)
+static size_t	ft_numlen(int n, bool is_negative)
 {
-	size_t	i;
+	size_t	len;
 
-	i = 1;
-	n = n / 10;
-	while (n)
+	len = 0;
+	if (is_negative == true)
+		len++;
+	while (n != 0)
 	{
 		n = n / 10;
-		i++;
+		len++;
 	}
-	return (i);
+	return (len);
 }
 
-char	*ft_itoa(int n)
+static char	*ft_num_to_str(size_t len, int num, bool is_negative)
 {
-	char		*ans;
-	size_t		len;
-	long long	num;
+	char	*ans;
 
-	num = n;
-	len = ft_numlen(num);
-	if (n < 0)
-	{
-		len++;
-		num *= -1;
-	}
 	ans = (char *)malloc(sizeof(char) * (len + 1));
 	if (!ans)
 		return (NULL);
@@ -51,7 +41,26 @@ char	*ft_itoa(int n)
 		ans[len] = num % 10 + '0';
 		num /= 10;
 	}
-	if (n < 0)
+	if (is_negative)
 		ans[0] = '-';
 	return (ans);
+}
+
+char	*ft_itoa(int num)
+{
+	size_t		len;
+	bool		is_negative;
+
+	if (num == 0)
+		return (ft_strdup("0"));
+	if (num == -2147483648)
+		return (ft_strdup("-2147483648"));
+	is_negative = false;
+	if (num < 0)
+	{
+		is_negative = true;
+		num *= -1;
+	}
+	len = ft_numlen(num, is_negative);
+	return (ft_num_to_str(len, num, is_negative));
 }
