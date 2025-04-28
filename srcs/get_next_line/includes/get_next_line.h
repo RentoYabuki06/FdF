@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ryabuki <ryabuki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 19:04:04 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/07/20 14:42:39 by yabukirento      ###   ########.fr       */
+/*   Updated: 2025/04/21 14:01:13 by ryabuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <errno.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10024
 # endif
 
-char	*get_next_line(int fd);
+char	*get_next_line(int fd, char **saved);
 size_t	ft_strlen(const char *str);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char const *s1, char const *s2);
